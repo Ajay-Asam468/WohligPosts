@@ -10,11 +10,13 @@
       <!-- <Home :posts="post.skills" /> -->
       <ion-card>
         <ion-card-header>
-          <ion-card-title
+          <ion-card-title v-for="x in filteredData" :key="x"
             ><p>Post:</p>
-            {{ loadedpost.position }}</ion-card-title
+            {{ x.position }}</ion-card-title
           >
-          <h2 v-if="!loadedpost">Could not find a memory for the given id.</h2>
+          <h2 v-if="!filteredData">
+            Could not find a memory for the given id.
+          </h2>
           <!-- <h2 v-else>{{ loadedpost.position }}</h2> -->
 
           <!-- <ion-card-subtitle
@@ -28,8 +30,13 @@
         <ion-card-header>
           <ion-card-title>
             <p>Skills :</p>
-            {{ loadedpost.Skills }}</ion-card-title
-          >
+            <ul>
+              <!-- <li v-for="i in filteredData.skills" :key="i">
+                {{ i.name }}
+              </li> -->
+              <li v-for="i in filteredData.skills" :key="i">{{ i }}</li>
+            </ul>
+          </ion-card-title>
           <!-- <ion-card-subtitle
             >Skills : HTML,CSS,Javascript,Vue JS,Node Js</ion-card-subtitle
           > -->
@@ -39,9 +46,9 @@
       </ion-card>
       <ion-card>
         <ion-card-header>
-          <ion-card-title
+          <ion-card-title v-for="x in filteredData" :key="x"
             ><p>Certification :</p>
-            {{ loadedpost.Certification }}</ion-card-title
+            {{ x.certification }}</ion-card-title
           >
           <!-- <ion-card-subtitle
             >Skills : HTML,CSS,Javascript,Vue JS,Node Js</ion-card-subtitle
@@ -82,6 +89,7 @@ import {
   IonToolbar,
   IonCard,
 } from "@ionic/vue";
+import axios from "axios";
 export default {
   components: {
     IonContent,
@@ -94,16 +102,34 @@ export default {
   data() {
     return {
       postId: this.$route.params.id,
+      filteredData: [],
     };
   },
-  computed: {
-    loadedpost() {
-      return this.$store.getters.post(this.postId);
-    },
-    posts() {
-      return this.$store.getters.posts;
-    },
+  // computed: {
+  //   loadedpost() {
+  //     return this.$store.getters.post(this.postId);
+  //   },
+
+  //   posts() {
+  //     return this.$store.getters.posts;
+  //   },
+  // },
+  async created() {
+    const response = await axios
+      .get(`http://localhost:3000/posts`)
+      .then((response) => {
+        this.filteredData = response.data.filter((x) => x.id == this.postId);
+      });
+
+    console.log(this.filteredData);
+    console.log(response);
   },
+
+  // post(state) {
+  //     return (postId) => {
+  //       return state.posts.find((post) => post.id == postId);
+  //     };
+  //   },
 };
 </script>
 
