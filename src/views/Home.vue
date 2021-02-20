@@ -15,7 +15,10 @@
           :router-link="`/home/${post.id}`"
           :key="post.id"
         >
-          <ion-label class="ion-text-center">{{ post.position }}</ion-label>
+          <ion-thumbnail>
+            <ion-img :src="post.url" alt="post.id"></ion-img>
+          </ion-thumbnail>
+          <ion-label class="ion-margin-start">{{ post.position }}</ion-label>
         </ion-item>
       </ion-list>
       <!-- <ion-header collapse="condense">
@@ -48,11 +51,19 @@ import {
   IonTitle,
   IonToolbar,
   IonItem,
+  IonThumbnail,
+  IonImg,
 } from "@ionic/vue";
+import axios from "axios";
 // import Details from "../pages/Details";
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  data() {
+    return {
+      posts: [],
+    };
+  },
   name: "Home",
   // props: {
   //   posts,
@@ -64,12 +75,23 @@ export default defineComponent({
     IonTitle,
     IonToolbar,
     IonItem,
+    IonThumbnail,
+    IonImg,
     // Details,
   },
-  computed: {
-    posts() {
-      return this.$store.getters.posts;
-    },
+  // computed: {
+  //   posts() {
+  //     return this.$store.getters.posts;
+  //   },
+  // },
+
+  async created() {
+    try {
+      const res = await axios.get(`http://localhost:3000/posts`);
+      this.posts = res.data;
+    } catch (e) {
+      console.log(e);
+    }
   },
 });
 </script>
@@ -101,5 +123,9 @@ export default defineComponent({
 
 #container a {
   text-decoration: none;
+}
+
+ion-img {
+  border-radius: 50%;
 }
 </style>

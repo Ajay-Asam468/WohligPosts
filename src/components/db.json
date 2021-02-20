@@ -1,0 +1,68 @@
+{
+    "posts": [
+    {
+      "id": 1,
+      "position": "Full Stack Developer",
+      "skills":  [{"name":"HTML"},{"name":"CSS"},{"name":"Javascript"}] ,
+      "url":"https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=389&q=80",
+      "certification": "Coursera Full Stack Program"
+    },
+    {
+      "id": 2,
+      "position": "FrontEnd Developer",
+      "skills": [{"name":"HTML"},{"name":"CSS"},{"name":"Javascript"},{"name":"Vue JS"}],
+      "url":"https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=389&q=80",
+
+      "certification": "FrontEnd Freecodecamp course"
+    },
+    {
+      "id": 3,
+      "position": "BackEnd Developer",
+      "skills": [{"name":"Node Js"},{"name":"AWS"}],
+      "url":"https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=389&q=80",
+
+      "certification": "Coursera BackEnd Program"
+    },
+    {
+      "id": 4,
+      "position": "Human Resource",
+      "skills": [{"name":"Communication Skills"},{"name":"Proactivity"}],
+      "url":"https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=389&q=80",
+      
+      "certification":
+        "Associate Professional in Human Resources certification"
+    },
+    {
+      "id": 5,
+      "position": "Project Manager",
+      "skills":[{"name":"LeaderShip"},{"name":"Collaboration"},{"name":"Communication skills"}],
+      "url":"https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=389&q=80",
+
+      "certification": "BVOP Certified Project Manager"
+    },
+    {
+      "id": 6,
+      "position": "UI/UX Developer",
+      "skills": [{"name":"Wireframing and UI prototyping"}],
+      "url":"https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=389&q=80",
+
+      "certification": "Coursera UI/UX certification"
+    },
+    {
+      "id": 7,
+      "position": "Data Scientist",
+      "skills":[{"name":"Statistics"},{"name":"Python"},{"name":"Data visualization"}],
+      "url":"https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=389&q=80",
+
+      "certification": "Upgrad Data science certification"
+    },
+    {
+      "id": 8,
+      "position": "CEO",
+      "skills": [{"name":"Strong Communication,Understanding and Listening"}],
+      "url":"https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=389&q=80",
+
+      "certification": "BVOP Certified CEO"
+    }
+  ]
+}
