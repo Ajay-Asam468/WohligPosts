@@ -34,7 +34,9 @@
               <!-- <li v-for="i in filteredData.skills" :key="i">
                 {{ i.name }}
               </li> -->
-              <li v-for="i in filteredData.skills" :key="i">{{ i }}</li>
+              <span v-for="i in filteredData" :key="i">
+                <li v-for="x in i.skills" :key="x">{{ x.name }}</li>
+              </span>
             </ul>
           </ion-card-title>
           <!-- <ion-card-subtitle
